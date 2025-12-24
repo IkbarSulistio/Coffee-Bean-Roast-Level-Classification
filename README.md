@@ -98,9 +98,9 @@ Evaluasi dilakukan menggunakan metrik:
 
 | Nama Model | Akurasi | Hasil Analisis |
 |----------|---------|---------------|
-| CNN Scratch | 96,75% | Memberikan performa yang cukup baik, namun masih terbatas dalam mengekstraksi fitur kompleks dibandingkan model pretrained. |
-| ResNet18 | 98,75% | Memberikan performa terbaik berkat kemampuan transfer learning dan arsitektur residual yang kuat. |
-| MobileNetV2 | 99,5% | Menawarkan keseimbangan antara akurasi dan efisiensi komputasi, cocok untuk sistem dengan resource terbatas. |
+| CNN Scratch | 96,75% | Model CNN dari awal mampu mencapai akurasi tinggi, menunjukkan arsitektur yang efektif dalam mengekstraksi fitur citra biji kopi. |
+| ResNet18 | 98,75% | Pemanfaatan transfer learning dan arsitektur residual meningkatkan kemampuan model dalam mempelajari fitur yang lebih kompleks. |
+| MobileNetV2 | 99,5% | Memberikan akurasi tertinggi dengan arsitektur yang efisien, sehingga sangat sesuai untuk penerapan sistem klasifikasi secara real-time. |
 
 **Kesimpulan:**  
 Model pretrained secara umum menghasilkan performa yang lebih baik dibandingkan CNN yang dilatih dari awal, dengan ResNet18 menunjukkan akurasi tertinggi.
@@ -113,6 +113,28 @@ Model pretrained secara umum menghasilkan performa yang lebih baik dibandingkan 
 ```bash
 git clone https://github.com/username/coffee-bean-classification.git
 cd coffee-bean-classification
-
+```
 ### 🔹 2. Clone Repository
-
+```bash
+pip install -r requirements.txt
+```
+### 🔹 3. Pastikan Struktur Folder
+```bash
+project/
+├── app.py
+├── models/
+│   ├── cnn_scratch.pkl
+│   ├── resnet18.pkl
+│   └── mobilenetv2.pkl
+├── assets/
+│   ├── training_metrics.json
+│   └── class_names.json
+```
+### 🔹 4. Jalankan Dashboard Streamlit (Di Terminal)
+```bash
+streamlit run app.py
+```
+### 🔹 5. Akses Aplikasi
+```bash
+http://localhost:8501
+```
